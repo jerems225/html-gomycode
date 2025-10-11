@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
++
+    </header>
+    <main>
+      <!-- section formulaire de contact -->
+      <section>
+        <form>
+          <label>Nom & Prenom(s)</label>
+          <input
+            type="text"
+            name="fullname"
+            value=""
+            placeholder="Entrer votre nom complet..."
+            required
+          />
+          <br /><br />
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            value=""
+            placeholder="Entrer votre email ..."
+            required
+          />
+          <br /><br />
+          <label>Mot de passe</label>
+          <input type="password" name="password" required /><br /><br />
+          <label>Telecharger une image de profile</label>
+          <input type="file" name="file" multiple /> <br /><br />
+          <label>Votre couleur preferee</label>
+          <input type="color" name="color" /> <br /><br />
+          <input type="date" /><br /><br />
+
+          <label>Genre</label><br />
+          Masculin<input type="radio" name="genre" id="genre" value="M" />
+          Feminin<input
+            type="radio"
+            name="genre"
+            id="genre"
+            value="F"
+          /><br /><br />
+
+          <label>Age</label><br />
+          <input type="number" min="0" max="5">
+          <br /><br />
+
+          <label>Choix de cours</label><br />
+          <select name="cours">
+            <option value="math">Mathermatique Financiere</option>
+            <option value="algebre" selected>Algebre Lineaire</option>`
+            <option value="english">Anglais et Francais </option>
+            <option value="git">Git&Github</option>
+          </select>
+         
+          <br /><br />
+          <button type="submit">Valider</button>
+        </form>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
