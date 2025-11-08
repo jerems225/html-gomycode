@@ -1,70 +1,50 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
+
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
   </head>
+
   <body>
     <header>
-+
+      <div class="header-logo">
+        <img src="./images/logo/logo-gomycode.png" alt="">
+      </div>
+      <nav class="header-navbar">
+        <ul>
+          <li>
+            <a href="">Accueil</a>
+          </li>
+          <li>
+            <a href="">A Propos</a>
+          </li>
+          <li>
+            <a href="">Documentation</a>
+          </li>
+          <li>
+            <a href="">Carrieres</a>
+          </li>
+          <li>
+            <a href="">Connexion</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-button">
+        <a href="" class="standard-btn">Contactez-Nous</a>
+      </div>
     </header>
     <main>
-      <!-- section formulaire de contact -->
-      <section>
-        <form>
-          <label>Nom & Prenom(s)</label>
-          <input
-            type="text"
-            name="fullname"
-            value=""
-            placeholder="Entrer votre nom complet..."
-            required
-          />
-          <br /><br />
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            value=""
-            placeholder="Entrer votre email ..."
-            required
-          />
-          <br /><br />
-          <label>Mot de passe</label>
-          <input type="password" name="password" required /><br /><br />
-          <label>Telecharger une image de profile</label>
-          <input type="file" name="file" multiple /> <br /><br />
-          <label>Votre couleur preferee</label>
-          <input type="color" name="color" /> <br /><br />
-          <input type="date" /><br /><br />
-
-          <label>Genre</label><br />
-          Masculin<input type="radio" name="genre" id="genre" value="M" />
-          Feminin<input
-            type="radio"
-            name="genre"
-            id="genre"
-            value="F"
-          /><br /><br />
-
-          <label>Age</label><br />
-          <input type="number" min="0" max="5">
-          <br /><br />
-
-          <label>Choix de cours</label><br />
-          <select name="cours">
-            <option value="math">Mathermatique Financiere</option>
-            <option value="algebre" selected>Algebre Lineaire</option>`
-            <option value="english">Anglais et Francais </option>
-            <option value="git">Git&Github</option>
-          </select>
-         
-          <br /><br />
-          <button type="submit">Valider</button>
-        </form>
-      </section>
+        <section class="banner">
+            <div class="overlay">
+                <h3>Les meilleures formations aux prix d'une glace.</h3>
+                <h5>Gomycode une institution de formations de haut standing avec des technologies innovantes de pointes.</h5>
+            </div>
+        </section>
     </main>
     <footer></footer>
   </body>
+
 </html>
