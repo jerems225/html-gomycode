@@ -54,6 +54,10 @@ header .header-navbar {
 
 }
 
+header .menu-bars {
+    display: none;
+}
+
 header .header-navbar ul {
     width: 100%;
     display: flex;
@@ -121,7 +125,7 @@ header .header-button {
 .banner .overlay h3 {
     width: 50%;
     text-align: center;
-    line-height: 70px;
+    line-height: 45px;
     font-size: 60px;
     color: #fff;
 }
@@ -130,5 +134,117 @@ header .header-button {
     font-size: 21px;
     color: #fff;
     font-weight: 200;
+    text-align: center;
     margin-top: 10px;
+}
+
+.about {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 20px;
+}
+
+.about .about-image {
+    width: 40%;
+    height: 350px;
+}
+
+.about .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about .about-text {
+    width: 40%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.about .about-text p {
+    width: 80%;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+@media (max-width: 804px) {
+    header {
+        height: 10vh;
+        justify-content: space-between;
+    }
+
+    header .header-logo {
+        width: 30%;
+    }
+
+    header .header-logo img {
+        width: 93%;
+        height: 93%;
+    }
+
+    header .header-navbar {
+        position: absolute;
+        top: -100%;
+    }
+
+    header .menu-bars {
+        width: 20%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 15px;
+    }
+
+    header .menu-bars #menu-icon {
+        font-size: 30px;
+    }
+
+    header .header-button {
+        display: none;
+        border: 1px solid red;
+    }
+
+    .banner {
+        height: 40vh;
+    }
+
+    .banner .overlay {
+        background-color: #00000097;
+    }
+
+    .banner .overlay h3 {
+        width: 89%;
+        font-size: 35px;
+    }
+
+    .banner .overlay h5 {
+        width: 70%;
+        font-weight: 350px;
+        line-height: 25px;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .about .about-image {
+        width: 80%;
+    }
+
+    .about .about-text {
+        width: 80%;
+    }
+
+    .about .about-text p {
+        width: 100%;
+        text-align: justify;
+    }
 }
