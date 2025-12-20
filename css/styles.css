@@ -51,7 +51,8 @@ header .header-navbar {
     width: 50%;
     height: 80%;
     display: flex;
-
+    justify-content: center;
+    align-items: center !important;
 }
 
 header .menu-bars {
@@ -64,7 +65,8 @@ header .header-navbar ul {
     justify-content: center;
     align-items: center;
     gap: 15px;
-
+    margin-block-start: 0em;
+    margin-block-end: 0em;
 }
 
 header .header-navbar ul li {
