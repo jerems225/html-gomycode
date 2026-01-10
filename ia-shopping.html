@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panier de shopping moderne</title>
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.06);
+    }
+
+    h2 { margin-bottom: 16px; }
+
+    .item {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .item:last-child { border-bottom: none; }
+
+    .item img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .item-info h4 { margin-bottom: 4px; }
+
+    .price { font-weight: 600; }
+
+    .qty {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .qty button {
+      width: 28px;
+      height: 28px;
+      border: none;
+      border-radius: 6px;
+      background: #e5e7eb;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .summary p {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .summary .total {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .checkout {
+      margin-top: 20px;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: var(--primary);
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .checkout:hover { opacity: .9; }
+
+    @media (max-width: 768px) {
+      .container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Liste des produits -->
+    <div class="card">
+      <h2>🛒 Mon panier</h2>
+
+      <div class="item" data-price="25000">
+        <img src="https://picsum.photos/200?1" />
+        <div class="item-info">
+          <h4>Casque Bluetooth</h4>
+          <span class="price">25 000 FCFA</span>
+        </div>
+        <div class="qty">
+          <button onclick="updateQty(this, -1)">-</button>
+          <span>1</span>
+          <button onclick="updateQty(this, 1)">+</button>
+        </div>
+      </div>
+
+      <div class="item" data-price="40000">
+        <img src="https://picsum.photos/200?2" />
+        <div class="item-info">
+          <h4>Montre connectée</h4>
+          <span class="price">40 000 FCFA</span>
+        </div>
+        <div class="qty">
+          <button onclick="updateQty(this, -1)">-</button>
+          <span>1</span>
+          <button onclick="updateQty(this, 1)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Résumé -->
+    <div class="card summary">
+      <h2>Résumé</h2>
+      <p><span>Sous-total</span><span id="subtotal">65 000</span></p>
+      <p><span>Livraison</span><span>2 000</span></p>
+      <p class="total"><span>Total</span><span id="total">67 000</span></p>
+      <button class="checkout">Passer la commande</button>
+    </div>
+
+  </div>
+
+  <script>
+    function updateQty(btn, change) {
+      const qtySpan = btn.parentElement.querySelector('span');
+      let qty = parseInt(qtySpan.textContent);
+      qty = Math.max(1, qty + change);
+      qtySpan.textContent = qty;
+      calculate();
+    }
+
+    function calculate() {
+      let subtotal = 0;
+      document.querySelectorAll('.item').forEach(item => {
+        const price = parseInt(item.dataset.price);
+        const qty = parseInt(item.querySelector('.qty span').textContent);
+        subtotal += price * qty;
+      });
+
+      document.getElementById('subtotal').textContent = subtotal.toLocaleString();
+      document.getElementById('total').textContent = (subtotal + 2000).toLocaleString();
+    }
+
+    calculate();
+  </script>
+</body>
+</html>

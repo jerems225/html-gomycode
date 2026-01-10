@@ -29,6 +29,11 @@ header {
     justify-content: center;
     align-items: center;
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    background-color: #fff;
+}
+
+header.fixed-menu {
+    position: fixed;
 }
 
 header .header-logo {
@@ -57,6 +62,11 @@ header .header-navbar {
 
 header .menu-bars {
     display: none;
+}
+
+header .menu-bars #menu-icon {
+    z-index: 99;
+    cursor: pointer;
 }
 
 header .header-navbar ul {
